@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="common_header_height">30dp</dimen>
+    <dimen name="common_item_margin">10dp</dimen>
+    <dimen name="common_item_height">30dp</dimen>
+</resources>

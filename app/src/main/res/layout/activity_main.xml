@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbarArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MyApplication.AppBarOverlay"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.MyApplication.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_header_height"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarArea">
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/common_item_margin"
+            android:gravity="center|start"
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            android:text="@string/title_time"/>
+
+        <TextView
+            android:id="@+id/value"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            android:text="@string/title_value"/>
+
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/common_item_margin"
+            android:gravity="center|end"
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            android:text="@string/title_amount"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
